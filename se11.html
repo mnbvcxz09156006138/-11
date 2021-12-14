@@ -1,0 +1,249 @@
+<html>
+
+<head>
+    <meta name="keywords" content="Neumorphism,calculator">
+    <title>Neumorphism calculator</title>
+    <meta name="description" content="طراحی باحال ماشین حساب ">
+    <meta name="author" content="Alireza Gholamrezaei">
+    <link rel="stylesheet" href="se11.css">
+</head>
+
+<body>
+    <div id="row">
+        <div class="col">
+            <input id="tb1" type="text">
+        </div>
+    </div>
+
+    <div id="row">
+        <div class="col">
+            <button id="btn_AC">AC</button>
+        </div>
+        <div class="col">
+            <button id="btn_mb">+/-</button>
+        </div>
+        <div class="col">
+            <button id="btn_darsad">%</button>
+        </div>
+        <div class="col">
+            <button id="btn_Div">/</button>
+
+        </div>
+    </div>
+
+    <div id="row">
+        <div class="col">
+            <button id="btn_7">7</button>
+        </div>
+        <div class="col">
+            <button id="btn_8">8</button>
+        </div>
+        <div class="col">
+            <button id="btn_9">9</button>
+        </div>
+        <div class="col">
+            <button id="btn_Multi">x</button>
+
+        </div>
+
+    </div>
+
+    <div id="row">
+        <div class="col">
+            <button id="btn_4">4</button>
+        </div>
+        <div class="col">
+            <button id="btn_5">5</button>
+        </div>
+        <div class="col">
+            <button id="btn_6">6</button>
+        </div>
+        <div class="col">
+            <button id="btn_sub">-</button>
+
+        </div>
+
+    </div>
+
+    <div id="row">
+        <div class="col">
+            <button id="btn_1">1</button>
+        </div>
+        <div class="col">
+            <button id="btn_2">2</button>
+        </div>
+        <div class="col">
+            <button id="btn_3">3</button>
+        </div>
+        <div class="col">
+            <button id="btn_sum">+</button>
+
+        </div>
+
+    </div>
+
+    <div id="row">
+        <div class="col">
+            <button id="btn_0">0</button>
+        </div>
+
+        <div class="col">
+            <button id="btn_dot">.</button>
+        </div>
+        <div class="col">
+            <button id="btn_equal">=</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        var tb1 = document.getElementById("tb1");
+
+        var btn_sum = document.getElementById("btn_sum");
+        var btn_sub = document.getElementById("btn_sub");
+        var btn_equal = document.getElementById("btn_equal");
+        var btn_Div = document.getElementById("btn_Div");
+        var btn_Multi = document.getElementById("btn_Multi");
+        var btn_darsad = document.getElementById("btn_darsad");
+        var btn_mb = document.getElementById("btn_mb");
+        var btn_AC = document.getElementById("btn_AC");
+
+
+
+
+
+        var btn_0 = document.getElementById("btn_0");
+        var btn_1 = document.getElementById("btn_1");
+        var btn_2 = document.getElementById("btn_2");
+        var btn_3 = document.getElementById("btn_3");
+        var btn_4 = document.getElementById("btn_4");
+        var btn_5 = document.getElementById("btn_5");
+        var btn_6 = document.getElementById("btn_6");
+        var btn_7 = document.getElementById("btn_7");
+        var btn_8 = document.getElementById("btn_8");
+        var btn_9 = document.getElementById("btn_9");
+        var btn_dot = document.getElementById("btn_dot");
+
+
+        var a, b, c, d;
+        // numbers
+        btn_1.onclick = function () {
+            tb1.value += parseInt(1);
+        }
+
+        btn_2.onclick = function () {
+            tb1.value += parseInt(2);
+        }
+
+        btn_3.onclick = function () {
+            tb1.value += parseInt(3);
+        }
+
+        btn_4.onclick = function () {
+            tb1.value += parseInt(4);
+        }
+
+        btn_5.onclick = function () {
+            tb1.value += parseInt(5);
+        }
+
+        btn_6.onclick = function () {
+            tb1.value += parseInt(6);
+        }
+
+        btn_7.onclick = function () {
+            tb1.value += parseInt(7);
+        }
+
+        btn_8.onclick = function () {
+            tb1.value += parseInt(8);
+        }
+
+        btn_9.onclick = function () {
+            tb1.value += parseInt(9);
+        }
+
+        btn_0.onclick = function () {
+            tb1.value += parseInt(0);
+        }
+
+        btn_dot.onclick = function () {
+            tb1.value += ".";
+        }
+
+        // operation
+
+        btn_sum.onclick = function () {
+            a = parseInt(tb1.value);
+            tb1.value = "";
+            operation = "+";
+
+
+        }
+
+        btn_sub.onclick = function () {
+            a = parseInt(tb1.value);
+            tb1.value = "";
+            operation = "-";
+        }
+
+        btn_Multi.onclick = function () {
+            a = parseInt(tb1.value);
+            tb1.value = "";
+            operation = "*";
+
+        }
+
+        btn_Div.onclick = function () {
+            a = parseInt(tb1.value);
+            tb1.value = "";
+            operation = "/";
+
+        }
+
+        btn_darsad.onclick = function () {
+            a = parseInt(tb1.value);
+            tb1.value = "";
+            operation = "%";
+
+        }
+
+        btn_AC.onclick = function () {
+            tb1.value = "";
+
+        }
+
+        btn_equal.onclick = function () {
+            if (operation == "+") {
+
+                b = parseInt(tb1.value);
+                c = a + b;
+                tb1.value = c;
+            }
+
+            if(operation == "-"){
+                b = parseInt(tb1.value);
+                c = a - b;
+                tb1.value = c;
+            }
+
+            if(operation == "*"){
+                b = parseInt(tb1.value);
+                c = a * b;
+                tb1.value = c;
+            }
+
+            if(operation == "/"){
+                b = parseInt(tb1.value);
+                c = a / b;
+                tb1.value = c;
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>
